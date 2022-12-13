@@ -25,5 +25,6 @@ public class FugaComHelicoptero {
                 break;
             }
         }
+        tec.close();
     }
 }

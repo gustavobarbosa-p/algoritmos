@@ -44,5 +44,6 @@ public class Carnaval {
         }
         double nota = n1+n2+n3+n4+n5-(maiorNumero+menorNumero);
         System.out.printf("%.1f", nota);
+        tec.close();
     }
 }

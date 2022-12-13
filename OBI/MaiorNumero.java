@@ -15,5 +15,6 @@ public class MaiorNumero {
             }
         }
       System.out.print(maior);
+      tec.close();
     }
 }

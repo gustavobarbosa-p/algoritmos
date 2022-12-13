@@ -37,5 +37,6 @@ public class Consecutivos {
             System.exit(0);
         }
         System.out.println(maior);
+        tec.close();
 	}
 }

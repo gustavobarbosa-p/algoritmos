@@ -12,5 +12,6 @@ public class TiraTeima {
         } else {
             System.out.println("fora");
         }
+        teclado.close();
     }
 }

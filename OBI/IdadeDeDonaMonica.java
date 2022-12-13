@@ -17,5 +17,6 @@ public class IdadeDeDonaMonica {
             maisVelho = terceiro;
         }
         System.out.println(maisVelho);
+        tec.close();
     }
 }

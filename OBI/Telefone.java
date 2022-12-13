@@ -34,5 +34,6 @@ public class Telefone {
         String result26 = result25.replace('Z','9');
 
         System.out.println(result26);
+        tec.close();
     }
 }

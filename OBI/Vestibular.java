@@ -23,5 +23,6 @@ public class Vestibular {
             }
         }
         System.out.println(pontuacao);
+        tec.close();
     }
 }

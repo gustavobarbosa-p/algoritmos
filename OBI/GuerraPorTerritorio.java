@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class GuerrePorTerritorio {
+public class GuerraPorTerritorio {
     public static void main(String[] args) {
         Scanner tec = new Scanner(System.in);
         
@@ -19,5 +19,6 @@ public class GuerrePorTerritorio {
 				System.out.println(i);
 			}
 		}
+		tec.close();
 	}
 }

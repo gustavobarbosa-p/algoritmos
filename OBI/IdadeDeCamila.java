@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class IdadeDeCamila {
     public static void main(String[] args) {
         Scanner tec = new Scanner(System.in);
         
@@ -25,5 +25,6 @@ public class Main {
         }if(c > a && c < b || c < a && c > b) {
             System.out.println(c);
         }
+        tec.close();
     }
 }

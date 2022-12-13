@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class Gangorra {
     public static void main(String[]args) {
         Scanner tec = new Scanner(System.in);
 
@@ -19,5 +19,6 @@ public class Main {
         }else {
             System.out.println("1");
         }
+        tec.close();
     }
 }

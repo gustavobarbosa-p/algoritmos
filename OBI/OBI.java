@@ -16,5 +16,6 @@ public class OBI {
             }
         }
       System.out.println(participantes);
+      tec.close();
     }
 }

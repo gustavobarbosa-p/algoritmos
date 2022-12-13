@@ -17,5 +17,6 @@ public class NumeroDeEnvelopes {
 			}
 		}
 		System.out.println(menor);
+		tec.close();
 	}
 }

@@ -15,5 +15,6 @@ public class AndandoNoTempo {
 		}else{
 			System.out.println("N");
 		}
+		tec.close();
 	}
 }

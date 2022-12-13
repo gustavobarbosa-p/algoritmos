@@ -4,9 +4,9 @@ public class AlarmeDespertador {
     public static void main(String[] args) {
         Scanner tec = new Scanner(System.in);
         
-            int i = 0;
-            while(i < 4) {
-    
+        int i = 0;
+        while(i < 4) {
+
             int H1 = tec.nextInt();
             int M1 = tec.nextInt();
             int H2 = tec.nextInt();
@@ -22,7 +22,9 @@ public class AlarmeDespertador {
             }else {
                 System.out.println(1440+(T2-T1));
                 i++;
-                }
-            }   
+            }
         }
+        
+        tec.close();
+    }
 }

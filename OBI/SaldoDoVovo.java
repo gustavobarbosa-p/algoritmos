@@ -17,5 +17,6 @@ public class SaldoDoVovo {
             }
         }
         System.out.println(menor);
+        tec.close();
     }
 }

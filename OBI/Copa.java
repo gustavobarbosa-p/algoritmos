@@ -16,5 +16,6 @@ public class Copa {
 	    } else {
 	        System.out.println("quartas");
 	    }
+        tec.close();
     }
 }

@@ -39,5 +39,6 @@ public class Medalhas {
         System.out.println(ouro);
         System.out.println(prata);
         System.out.println(bronze);
+        tec.close();
     }
 }

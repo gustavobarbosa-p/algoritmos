@@ -16,5 +16,6 @@ public class DroneDeEntrega {
         }else{
             System.out.println("N");
         }
+        tec.close();
     }
 }

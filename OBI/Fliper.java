@@ -16,5 +16,6 @@ public class Fliper {
         }if(P == 1 && R == 1) {
         	System.out.println("A");
         }
+        tec.close();
     }
 }

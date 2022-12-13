@@ -25,7 +25,8 @@ public class ZeroParaCancelar {
 		for (int i = 0; i < num; i++) {
 		    soma += vet[i];
 		}
-        
+
 		System.out.println(soma);
+		tec.close();
 	}
 }

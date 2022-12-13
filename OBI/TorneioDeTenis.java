@@ -24,5 +24,6 @@ public class TorneioDeTenis {
         }if(pts == 0) {
         	System.out.println("-1");
         }
+        tec.close();
     }
 }

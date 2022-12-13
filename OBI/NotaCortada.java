@@ -15,5 +15,6 @@ public class NotaCortada {
         }else {
             System.out.println("0");
         }
+        tec.close();
     }
 }

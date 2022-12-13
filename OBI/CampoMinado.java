@@ -41,5 +41,6 @@ public class CampoMinado {
             }
             System.out.println(qDeMi);
         }
+        tec.close();
     }
 }

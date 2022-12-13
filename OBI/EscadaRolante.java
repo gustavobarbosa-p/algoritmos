@@ -6,7 +6,6 @@ public class EscadaRolante {
         
         int n = tec.nextInt();
         int[] instante = new int[n];
-        int tempoLigada = 0;
         int pDeParada = 10;
         
         for(int i = 0; i < n; i++) {
@@ -21,5 +20,6 @@ public class EscadaRolante {
             }
         }
         System.out.println(pDeParada);
+        tec.close();
     }
 }
