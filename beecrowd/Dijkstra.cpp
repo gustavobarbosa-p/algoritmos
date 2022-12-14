@@ -2,25 +2,24 @@
 using namespace std;
 
 int main() {
+    
+    vector<string> vetor (1);
+    string entrada;
+    int qtd_de_joias = 0;
 
-    vector<string> vetor;
-    int n; cin >> n;
-    int j = 0;
-    int i = 0;
-    while(i < n) {
-        string entrada; cin >> entrada;
-        vetor.push_back(entrada);
-
-        for(int i = 0; i < vetor.size()) {
-            if(vetor.size()>1 && entrada == vetor[i]) {
+    while(cin >> entrada) {
+        for(int i = 0; i < vetor.size(); i++) {
+            if(entrada == vetor[i]) {
                 break;
             }else {
-                j++;
+                if(i == vetor.size()-1) {
+                	qtd_de_joias+=1;
+                    vetor.push_back(entrada);
+                }
             }
         }
-        i++;
     }
-    cout << j;
+    cout << qtd_de_joias << endl;
     
     return 0;
 }
