@@ -3,41 +3,48 @@ using namespace std;
 #define INF 9999999
 
 pair<int, int> lista[55];
-int m;
+int n;
+int memo[5005][105];
+bool pd[5005][105];
 
 int mochila(int capacidade, int atual) {
     if(capacidade < 0) return -INF;
-    if(atual == m) return 0;
+    if(atual == n) return 0;
+    if(pd[capacidade][atual]) return memo[capacidade][atual];
 
     int pega = mochila(capacidade - lista[atual].second, atual+1) + lista[atual].first;
     int descarta = mochila(capacidade, atual+1);
+    
+    pd[capacidade][atual] = true;
 
-    return max(pega, descarta);
+    return memo[capacidade][atual] = max(pega, descarta);
 }
 
 int main() {
 
-    int n; cin >> n;
-    for(int i = 0; i < n; i++) {
-        cin >> m;
-        for(int j = 0, x, y; j < m; j++) {
-            cin >> x >> y;
-            lista[i] = {x, y};
-        }
-        int k; cin >> k;
-        int r = mochila(k, 0);
-        int resistencia; cin >> resistencia;
+    int t; cin >> t;
+    for(int i = 0; i < t; i++) {
+        cin >> n;
 
-        // cout << "mochila: " << r << endl;
-        // cout << "Resistencia: " << resistencia << endl;
+        for(int j = 0, poder, peso; j < n; j++) {
+            cin >> poder >> peso;
+            lista[j] = {poder, peso}; // eu tava colocando lista[i] = ... ao invés de lista[j] = ... por isso dava erro KKKKKKKKK, vacilo
+        }
+        int capacidade; cin >> capacidade;
+        int r = mochila(capacidade, 0);
+        int resistencia; cin >> resistencia;
 
         if(r >= resistencia) {
             cout << "Missao completada com sucesso" << endl;
         }else {
             cout << "Falha na missao" << endl;
         }
+        
+        for(int k = 0; k < 5005; k++)
+            for(int l = 0; l < 105; l++)
+                pd[k][l] = false;
+
     }
 
     return 0;
 }
-// aparentemente tudo certo mas tá dando erro :(
