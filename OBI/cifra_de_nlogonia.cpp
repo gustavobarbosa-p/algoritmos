@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+char alfabeto[19] = {'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'x', 'z'};
+
 
 char is_vowel(char vowel) {
     if(vowel == 'a' || vowel == 'e' || vowel == 'i' || vowel == 'o' || vowel == 'u') {
@@ -9,43 +11,48 @@ char is_vowel(char vowel) {
     return false;
 }
 
-char terceiro_caracter(char letra, int index) {
-    char alfabeto[24] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'x', 'z'};
-    if(alfabeto[index] != letra) return terceiro_caracter(letra, index+1);
+char cos_prox(int index, char letra) {
+    char lc;
+    if(letra == 'z') return 'z';
+    if(letra == 'b') return 'c';
 
-    if(letra == 'z') {
-        return 'z';
-    }else {
-        char letra_f = is_vowel(alfabeto[index+1]);
-        if(!letra_f) {
-            return letra_f;
-        }
+    if(alfabeto[index] != letra && index < 19) {
+        lc = cos_prox(index+1, letra);
+    }else if(index != 0) {
+        return alfabeto[index+1];
     }
-    return true;
+
+    return lc;
 }
-
-
 
 int main() {
 
     string palavra; cin >> palavra;
-    string nova_palavra = "";
-    string novo_caracter = "";
+	string nova_palavra = "";
 
-    for(int i = 0; i < palavra.size(); i++) {
-        bool v = is_vowel(palavra[i]);
-        if(v) {
-            nova_palavra+=palavra[i];
-        }else {
-            novo_caracter+=palavra[i];
-            //2° caracter: a vogal mais próxima da consoante original no alfabeto, com a regra adicional de que se a consoante original está à mesma distância de duas vogais, então a vogal mais próxima do início do alfabeto é usada.
-            novo_caracter+=terceiro_caracter(palavra[i], 0);
-            nova_palavra+=novo_caracter;
-        }
-    }
-    cout << nova_palavra;
+	for(int i = 0; i < palavra.size(); i++) {
+		bool v = is_vowel(palavra[i]);
+		if(v) {
+			nova_palavra+=palavra[i];
+		}else {
+			nova_palavra+=palavra[i];
+
+			if(palavra[i] == 'b' || palavra[i] == 'c') {
+				nova_palavra+='a';
+			}else if(palavra[i] == 'd' || palavra[i] == 'f' || palavra[i] == 'g') {
+				nova_palavra+='e';
+			}else if(palavra[i] == 'h' || palavra[i] == 'j' || palavra[i] == 'k' || palavra[i] == 'l') {
+				nova_palavra+='i';
+			}else if(palavra[i] == 'm' || palavra[i] == 'n' || palavra[i] == 'p' || palavra[i] == 'q' || palavra[i] == 'r') {
+				nova_palavra+='o';
+			}else if(palavra[i] == 's' || palavra[i] == 't' || palavra[i] == 'v' || palavra[i] == 'x' || palavra[i] == 'z') {
+				nova_palavra+='u';
+			}
+
+			nova_palavra+=cos_prox(0, palavra[i]);
+		}
+	}
+	cout << nova_palavra << endl;
 
     return 0;
 }
-
-// Incompleta, ainda vou tentar resolver
