@@ -26,3 +26,9 @@ int main() {
 
     return 0;
 }
+
+/*
+Os 2 parâmentros do map são chave e valor
+(num vetor comum seria a posição e o valor que ela armazena)
+
+*/ 
